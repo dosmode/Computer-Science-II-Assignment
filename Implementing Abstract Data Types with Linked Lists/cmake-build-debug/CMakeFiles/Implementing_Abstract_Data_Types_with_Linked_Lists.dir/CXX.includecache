@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jackson/CLionProjects/Implementing Abstract Data Types with Linked Lists/main.cpp
+iostream
+-
+stackLL.h
+/Users/jackson/CLionProjects/Implementing Abstract Data Types with Linked Lists/stackLL.h
+queueLL.h
+/Users/jackson/CLionProjects/Implementing Abstract Data Types with Linked Lists/queueLL.h
+priorityQueueLL.h
+/Users/jackson/CLionProjects/Implementing Abstract Data Types with Linked Lists/priorityQueueLL.h
+
+/Users/jackson/CLionProjects/Implementing Abstract Data Types with Linked Lists/priorityQueueLL.h
+iostream
+-
+
+/Users/jackson/CLionProjects/Implementing Abstract Data Types with Linked Lists/queueLL.h
+iostream
+-
+
+/Users/jackson/CLionProjects/Implementing Abstract Data Types with Linked Lists/stackLL.h
+iostream
+-
+

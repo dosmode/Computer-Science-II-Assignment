@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jackson/CLionProjects/doubly linked list demo/doublyLL.h
+iostream
+-
+
+/Users/jackson/CLionProjects/doubly linked list demo/main.cpp
+iostream
+-
+string
+-
+doublyLL.h
+/Users/jackson/CLionProjects/doubly linked list demo/doublyLL.h
+

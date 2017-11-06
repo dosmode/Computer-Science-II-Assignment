@@ -7,17 +7,20 @@ public:
 
     string data;
     node * next;
+
+    void printList (node * p) {
+        node * test;
+        test = p;
+        //node *temp;
+        //temp = p;
+
+        while (test != NULL) {
+            cout << (*p).data << endl;
+            p = (*p).next;
+        }
+    }
 };
 
-void printList (node * p) {
-    node *temp = new node;
-    temp = p;
-
-    while (temp != NULL) {
-        cout << (*p).data << endl;
-        p= (*p).next;
-    }
-}
 
 
 int main() {
@@ -44,7 +47,7 @@ int main() {
 
     (*D).next = NULL;
 
-    printList(A);
+    (*A).printList(A);
 
     return 0;
 }
