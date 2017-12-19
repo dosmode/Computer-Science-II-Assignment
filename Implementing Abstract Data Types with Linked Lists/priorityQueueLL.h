@@ -7,65 +7,103 @@ using namespace std;
 #define IMPLEMENTING_ABSTRACT_DATA_TYPES_WITH_LINKED_LISTS_PRIORITYQUEUELL_H
 
 
-class priorityQueueLL
+class priorityQueue
 {
 private:
     class node
     {
     public:
-        node * next;
+
         double data;
+        node * next;
+        node * prev;
+
+        node(double x){
+            data = x;
+            next = NULL;
+            prev = NULL;
+
+        }
     };
 
-    node * front;
-    node * rear;
-
+    node * head;
+    node * tail;
 public:
 
-    priorityQueueLL() {
-        front = NULL;
-        rear = NULL;
+    priorityQueue() {
+        head = NULL;
+        tail = NULL;
     }
 
     ~priorityQueueLL()
-    {}
-
-    //return true if empty, false if not
+    {
+        while(!empty()){
+            extractMin();
+        }
+    }
     bool empty(){
-        if (front == NULL){
+        if (head == NULL){
             return true;
         }else return false;
     }
 
-
-    //add item
-    void insert(int x) {
-        node * walker = new node;
-        walker ->data =x;
-        walker ->next =NULL;
-        if(front == NULL){
-            front = walker;
-            rear = walker;
+    int insert(int x)
+    {
+        if(head == NULL) {
+            node *temp = new node(x);
+            head = temp;
+            tail = temp;
         }else {
-            rear->next = walker;
-            rear = walker;
+            node * temp = new node(x);
+            temp->prev = tail;
+            tail->next =temp;
+            tail = temp;
         }
     }
-    //remove and return smallest item
-    int extractMin() {
-        node * current = front;
-
-        while (current != NULL){
-            if( current->data < front->data){
-               swap (current->data , front->data);
+    double extractMin() {
+        node * temp = head;
+        for(node * p = head; p!=NULL; p->next){
+            if(p->data < temp->data){
+                swap(p->data, temp->data);
             }
-
-            current = current->next;
         }
-
-        return front->data;
+        node * doomed = head;
+        double tempdata = doomed->data;
+        head=head->next;
+        delete doomed;
+        return tempdata;
     }
-
-
 };
+class test {
+    double closest = 100.0;
+    int n;
+    for(int p1 = 0; p1 < n; p1++){
+        for (int p2 = p1 + 1; p2 < n; p2++) {
+            int data = abs(points[p1] - points[p2]);
+            if (closest > data) {
+                closest = data;
+            }
+        }
+    }
+};
+
+int fullNodes (node * p)
+{
+    if (p == NULL){
+        return 0;
+    }else if (p->left != NULL && p->right != NULL) {
+        return 1 + fullNodes(p->left) + fullNodes(p->right);
+    }
+}
+
+
+void reverse(node *r){
+    if(r == NULL) {
+    } else {
+        swap(r->left, r->right);
+        reverse(r->right);
+        reverse(r->left);
+    }
+}
+
 #endif //IMPLEMENTING_ABSTRACT_DATA_TYPES_WITH_LINKED_LISTS_PRIORITYQUEUELL_H

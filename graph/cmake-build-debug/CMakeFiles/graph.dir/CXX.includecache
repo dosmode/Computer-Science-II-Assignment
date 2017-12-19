@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jackson/CLionProjects/graph/directedGraph.h
+iostream
+-
+string
+-
+vector
+-
+queue
+-
+
+/Users/jackson/CLionProjects/graph/main.cpp
+iostream
+-
+directedGraph.h
+/Users/jackson/CLionProjects/graph/directedGraph.h
+
